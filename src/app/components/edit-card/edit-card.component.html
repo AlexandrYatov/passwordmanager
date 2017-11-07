@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="col s6 m3 xl3">
+  <div class="card hoverable">
+    <div class="addText">
+      Edit card
+    </div>
+    <input placeholder="Name" required
+           type="text"
+           [(ngModel)]="form.name"
+           (keydown.Enter)="editCard()"
+    />
+    <input placeholder="Password" required
+           type="password"
+           [(ngModel)]="form.password"
+           (keydown.Enter)="editCard()"
+    />
+    <input placeholder="Path to image" required
+           type="text"
+           [(ngModel)]="form.path"
+           (keydown.Enter)="editCard()"
+    />
+    <div class="card-action">
+      <a class="waves-effect waves-light btn" (click)="goBack()">go back</a>
+      <a class="waves-effect waves-light btn" (click)="save()">save</a>
+    </div>
+  </div>

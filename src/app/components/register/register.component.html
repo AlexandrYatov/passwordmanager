@@ -1,0 +1,31 @@
+<div class="row" *ngIf="!name; else forminfo">
+  <form class="col s12"
+  [formGroup]="nForm" (ngSubmit)="addUser(nForm.value)" >
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="name" type="text" formControlName="name">
+        <label>Name</label>
+        <div class="alert  red lighten-2" *ngIf="!nForm.controls['name'].valid && nForm.controls['name'].touched" >{{ titleAlert }}</div>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">ac_unit</i>
+        <input id="password" type="password" formControlName="password">
+        <label >Password </label>
+        <div class="alert  red lighten-20" *ngIf="!nForm.controls['password'].valid && nForm.controls['password'].touched" >You must specify a password that's between 8 and 16 characters</div>
+      </div>
+      <div class="input-field col s6">
+        <input type="submit" value="Submit Form" [disabled]="!nForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="col s12">
+    <ul class="collection">
+      <li class="collection-item">{{ name }}</li>
+      <li class="collection-item">{{ password }}</li>
+    </ul>
+  </div>
+</ng-template>

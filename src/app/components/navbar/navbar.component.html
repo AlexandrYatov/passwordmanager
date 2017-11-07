@@ -1,0 +1,25 @@
+
+  <div class="col s12">
+    <nav>
+      <div class="nav-content">
+        <a [routerLink]="['/']" class="brand-logo center hide-on-med-and-down">Password Manager</a>
+      </div>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left">
+          <li><a [routerLink]="['/']">Home</a></li>
+          <li><a [routerLink]="['/cards']">Cards</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right">
+          <!--[routerLink]="['/register']"-->
+          <!--<li><a (click)="login()">Login</a></li>-->
+          <!--<li><a (click)="logout()">Logout</a></li>-->
+          <li><a [routerLink]="['/']">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div>
+    {{ (card | async)?.name }}
+  </div>
+
+

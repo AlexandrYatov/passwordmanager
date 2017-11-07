@@ -1,0 +1,56 @@
+
+<app-navbar></app-navbar>
+
+<!---->
+<div class="row" *ngIf="cards.length" >
+  <div class="col s6 m3 xl13">
+    <div class="card hoverable addCard">
+      <div class="addText">
+        Add new card
+      </div>
+      <input placeholder="Name" required
+             type="text"
+             [(ngModel)]="form.name"
+             (keydown.Enter)="addCard()"
+      />
+      <input placeholder="Password" required
+             type="password"
+             [(ngModel)]="form.password"
+             (keydown.Enter)="addCard()"
+      />
+      <input placeholder="Path to image" required
+             type="text"
+             [(ngModel)]="form.path"
+             (keydown.Enter)="addCard()"
+      />
+      <!--<button type="button" (click)="addCard()">Add Card</button>-->
+      <a class="waves-effect waves-light btn" type="button" (click)="addCard()">Add Card</a>
+    </div>
+  </div>
+  <div class="col s6 m3 xl3"
+       *ngFor="let card of cards"
+  >
+    <div class="card hoverable">
+      <div class="card-image">
+
+        <img src="{{ card.path }}">
+        <span class="card-title"> {{ card.name }} </span>
+      </div>
+      <div class="card-content password">
+        <p>{{ card.password }}</p>
+      </div>
+      <div class="card-action">
+        <a class="waves-effect waves-light btn" (click)="remove( card )">Remove</a>
+      </div>
+      <div class="card-action">
+        <a class="waves-effect waves-light btn" routerLink="/edit-card/{{card.id}}">Edit</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!---->
+
+<p>
+  <a (click)="reload()">Reload Cards</a>
+</p>

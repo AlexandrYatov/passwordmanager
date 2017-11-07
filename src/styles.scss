@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+.btn {
+  width:100%;
+  max-width:200px;
+}
+
+.card {
+  min-height: 295px;
+  .card-title {
+    text-shadow: 0px 0px 2px #000;
+  }
+  img {
+    min-width: 139px;
+    min-height: 139px;
+  }
+}

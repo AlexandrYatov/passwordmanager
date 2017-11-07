@@ -1,0 +1,17 @@
+<div class="row login">
+  <h1>Password Manager</h1>
+  <form class="col s6 offset-s3" (submit)="loginUser($event)">
+    <div class="input-field col s12">
+      <input id="name" type="text" class="validate">
+      <label class="active" for="name">User Name</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="password" type="password" class="validate">
+      <label class="active" for="password">Password</label>
+    </div>
+    <div class="col s12">
+      <!--<a type="submit" class="waves-effect waves-light btn">Login</a>-->
+      <input class="waves-effect waves-light btn" type="submit" value="Enter">
+    </div>
+  </form>
+</div>
